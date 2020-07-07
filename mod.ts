@@ -1,5 +1,10 @@
 import * as log from "https://deno.land/std/log/mod.ts";
 
+interface Launch {
+  flight_number: number;
+  name: string;
+}
+
 const launches = new Map<number, Launches>();
 
 async function downloadLaunchData() {
