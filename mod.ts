@@ -5,7 +5,7 @@ interface Launch {
   name: string;
 }
 
-const launches = new Map<number, Launches>();
+const launches = new Map<number, Launch>();
 
 async function downloadLaunchData() {
   log.info("Beginning download...");
