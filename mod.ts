@@ -6,8 +6,13 @@ async function downloadLaunchData() {
     method: "GET",
   });
 
+  if (!response.ok) {
+    log.warning("Oops, there was a problem downloading the launch data");
+    throw new Error("Failed to download launch data");
+  }
+
   const launchData = await response.json();
-  // console.log(launchData);
+  console.log(launchData);
 }
 
 downloadLaunchData();
