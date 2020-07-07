@@ -6,3 +6,5 @@ async function downloadLaunchData() {
   const launchData = await response.json();
   console.log(launchData);
 }
+
+downloadLaunchData();
