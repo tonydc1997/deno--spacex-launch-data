@@ -1,5 +1,7 @@
 import * as log from "https://deno.land/std/log/mod.ts";
 
+const launches = new Map<number, Launches>();
+
 async function downloadLaunchData() {
   log.info("Beginning download...");
   const response = await fetch("https://api.spacexdata.com/v4/launches", {
