@@ -19,7 +19,18 @@ async function downloadLaunchData() {
   }
 
   const launchData = await response.json();
-  console.log(launchData);
-}
+  for (const launch of launchData) {
+    const flightData = {
+      flightNumber: launch["flight_number"],
+      name: launch["name"],
+    };
+    launches.set(flightData.flightNumber, flightData.name);
 
-downloadLaunchData();
+    log.info(flightData);
+  }
+}
+if (import.meta.main) {
+  await downloadLaunchData();
+  log.info(import.meta);
+  log.info(`Downloaded data for ${launches.size} SpaceX launches!`);
+}
