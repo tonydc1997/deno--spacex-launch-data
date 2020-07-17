@@ -22,9 +22,9 @@ async function downloadLaunchData() {
   for (const launch of launchData) {
     const flightData = {
       flightNumber: launch["flight_number"],
-      mission: launch["name"],
+      name: launch["name"],
     };
-    launches.set(flightData.flightNumber, flightData);
+    launches.set(flightData.flightNumber, flightData.name);
   }
 }
 
