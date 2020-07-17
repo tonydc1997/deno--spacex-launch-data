@@ -24,6 +24,7 @@ async function downloadLaunchData() {
       flightNumber: launch["flight_number"],
       mission: launch["name"],
     };
+    launches.set(flightData.flightNumber, flightData);
   }
 }
 
