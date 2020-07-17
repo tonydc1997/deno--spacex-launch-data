@@ -19,7 +19,12 @@ async function downloadLaunchData() {
   }
 
   const launchData = await response.json();
-  console.log(launchData);
+  for (const launch of launchData) {
+    const flightData = {
+      flightNumber: launch["flight_number"],
+      mission: launch["name"],
+    };
+  }
 }
 
 downloadLaunchData();
