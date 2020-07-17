@@ -31,4 +31,5 @@ async function downloadLaunchData() {
 }
 
 await downloadLaunchData();
+log.info(import.meta);
 log.info(`Downloaded data for ${launches.size} SpaceX launches!`);
