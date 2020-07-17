@@ -30,4 +30,4 @@ async function downloadLaunchData() {
   }
 }
 
-downloadLaunchData();
+await downloadLaunchData();
