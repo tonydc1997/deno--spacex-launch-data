@@ -29,7 +29,8 @@ async function downloadLaunchData() {
     log.info(flightData);
   }
 }
-
-await downloadLaunchData();
-log.info(import.meta);
-log.info(`Downloaded data for ${launches.size} SpaceX launches!`);
+if (import.meta.main) {
+  await downloadLaunchData();
+  log.info(import.meta);
+  log.info(`Downloaded data for ${launches.size} SpaceX launches!`);
+}
